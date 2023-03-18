@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mars!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="jumbotron text-center">
+            <h1>Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Mars</a></p>
+        </div>
+
+        <!-- Mars Data -->
+        <!-- <div class="row" id="craiglist-listings">
+      <div class="col-md-12">
+        <h4 class="heading">{{listings.price}} {{listings.headline}}</h4>
+        <small>{{listings.reviews}}</small>
+      </div>
+    </div> -->
+        <h1>Mars Data</h1>
+        <h2>Latest News</h2>
+        <p>{{ mars_db.news_title }}</p>
+        <p>{{ mars_db.news_p }}</p>
+
+        <h2>Featured Image</h2>
+        <img src="{{ mars_db.featured_image_url }}" alt="Featured Mars Image">
+
+        <h2>Mars Facts</h2>
+        {{ mars_data.html_table | safe }}
+
+        <h2>Hemisphere Images</h2>
+        {% for hemisphere in mars_db.hemisphere_data %}
+        <h3>{{ hemisphere.title }}</h3>
+        <img src="{{ hemisphere.img_url }}" alt="{{ hemisphere.title }}">
+        {% endfor %}
+    </div>
+</body>
+
+</html>
+
+<!-- write a for loop that lists out your data and accesses the values using dot notation. -->
+<!-- {% for item in inventory %}
+       <div class="col-lg-4">
+           <div class="card" style="width: 20rem;">
+               <div class="card-body">
+                 <h4 class="card-title">{{ item.type }}</h4>
+                 <h6 class="card-subtitle mb-2 text-muted">Cost: {{ item.cost }}</h6>
+                 <p class="card-text">Potential Revenue: {{ item.cost * item.stock}}</p>
+               </div>
+             </div>
+         </div>
+         {% endfor %} -->
