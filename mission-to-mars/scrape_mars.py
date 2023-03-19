@@ -21,8 +21,9 @@ def scrape():
     featured_image_url = browser.find_by_css('.fancybox-image')['src']
 
     facts_url = 'https://galaxyfacts-mars.com'
-    tables = pd.read_html(facts_url)
-    html_table = tables[0].to_html().replace('\n', '')
+    tables = pd.read_html(facts_url, header=0, index_col=0)[0]
+    html_table = tables.to_html(
+        classes='table table-striped', border=0).replace('\n', '')
 
     browser.visit('https://marshemispheres.com/')
 
