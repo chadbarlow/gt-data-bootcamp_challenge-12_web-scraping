@@ -22,7 +22,7 @@ def scrape():
 
     facts_url = 'https://galaxyfacts-mars.com'
     tables = pd.read_html(facts_url)
-    html_table = tables[1].to_html().replace('\n', '')
+    html_table = tables[0].to_html().replace('\n', '')
 
     browser.visit('https://marshemispheres.com/')
 
@@ -31,7 +31,7 @@ def scrape():
 
     for link in links:
         link.click()
-        img_url = browser.links.find_by_partial_href('.tif').first['href']
+        img_url = browser.links.find_by_partial_href('full.jpg').first['href']
         title = ' '.join(browser.find_by_css('h2.title').text.split()[:-2])
         hemisphere_data.append({'img_url': img_url, 'title': title})
         browser.back()
@@ -47,8 +47,3 @@ def scrape():
     browser.quit()
 
     return mars_db
-
-
-# if __name__ == "__main__":
-#     scraped_data = scrape()
-#     print(json.dumps(scraped_data, indent=4))
