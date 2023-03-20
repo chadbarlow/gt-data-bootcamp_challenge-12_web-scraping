@@ -2,7 +2,7 @@ from splinter import Browser
 from bs4 import BeautifulSoup as bs
 from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
-
+import time
 
 def scrape():
     executable_path = {'executable_path': ChromeDriverManager().install()}
@@ -10,6 +10,7 @@ def scrape():
 
     url = 'https://redplanetscience.com/'
     browser.visit(url)
+    time.sleep(1)
     html = browser.html
     soup = bs(html, 'html.parser')
     news_title = soup.find('div', class_='content_title').text.strip()

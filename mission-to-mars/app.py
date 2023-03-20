@@ -7,15 +7,17 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
 mongo = PyMongo(app)
 
+# prevent cached responses
+if app.config["DEBUG"]:
+    @app.after_request
+    def after_request(response):
+        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, public, max-age=0"
+        response.headers["Expires"] = 0
+        response.headers["Pragma"] = "no-cache"
+        return response
 
-# def format_table(html_table):
-#     table_start = '<div class="table-responsive"><div class="table-container"><table class="table table-striped table-hover table-bordered">'
-#     table_end = '</table></div></div>'
-#     return table_start + re.sub('^<table>', '', re.sub('</table>$', '', html_table)) + table_end
-
-
-# app.jinja_env.filters['format_table'] = format_table
-
+# clear db 
+mongo.db.drop_collection("mars_db")
 
 @app.route("/")
 def index():
