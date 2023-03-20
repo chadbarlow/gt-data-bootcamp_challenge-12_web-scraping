@@ -110,7 +110,6 @@
       border-radius: 10px;
     }
 
-    /* Hemisphere images styles */
     .hemi-images {
       display: flex;
       flex-wrap: wrap;
@@ -118,8 +117,8 @@
     }
 
     .hemi-image {
-      flex-basis: 300px;
-      margin: 20px;
+      flex-basis: 250px;
+      margin: 0 12px 20px 12px;
       background-color: #fff;
       border-radius: 5px;
     }
@@ -180,12 +179,9 @@
         <p>{{ mars_db.news_p }}</p>
       </div>
     </div>
-
-    <!-- Add a new row div here -->
-    <div class="row">
-      <!-- Wrap the Featured Image card in a col-md-6 div -->
+    <div class="row my-flex-card">
       <div class="col-md-6">
-        <div class="card half-screen-card">
+        <div class="card">
           <div class="card-header">
             <h2>Featured Image</h2>
           </div>
@@ -195,10 +191,8 @@
           </div>
         </div>
       </div>
-
-      <!-- Wrap the Mars Facts card in a col-md-6 div -->
       <div class="col-md-6">
-        <div class="card half-screen-card">
+        <div class="card">
           <div class="card-header">
             <h2>Mars Facts</h2>
           </div>
@@ -208,9 +202,7 @@
           </div>
         </div>
       </div>
-    </div> <!-- Close the row div here -->
-
-
+    </div>
     <div class="card">
       <div class="card-header">
         <h2>Hemisphere Images</h2>
