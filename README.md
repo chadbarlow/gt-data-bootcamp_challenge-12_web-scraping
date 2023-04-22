@@ -1,4 +1,4 @@
-<h1 align="left">WEB SCRAPING<br><i>Topic: Mission to Mars</i> </h1> 
+<h1 align="left">WEB SCRAPING & MONGODB<br><i>Topic: Mission to Mars</i> </h1> 
 
 <p>The purpose of this project is to dynamically extract and analyze Mars-related data from various websites to gain insights into the Martian environment and climate. The scraped data is stored using MongoDB and displayed with Flask and JS.</p>
 
