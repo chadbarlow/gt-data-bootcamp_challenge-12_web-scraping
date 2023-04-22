@@ -1,15 +1,11 @@
 <h1 align="left">WEB SCRAPING<br><i>Topic: Mars Data Analysis</i> </h1> 
 
-<p>The purpose of this project is to dynamically extract and analyze Mars-related data from various websites to gain insights into the Martian environment and climate.
-</p>
+<p>The purpose of this project is to dynamically extract and analyze Mars-related data from various websites to gain insights into the Martian environment and climate. The scraped data is stored using MongoDB and displayed with Flask and JS.</p>
 
-The website is live at: https://web-design-challenge.github.io/live/
-
-<h3 align="center"><a href="https://web-design-challenge.github.io/live/">
-<img src="https://user-images.githubusercontent.com/8321756/233785536-8f5eda48-bf89-4703-a3f4-0a21d378077e.png"></a></h3>
+<h3 align="center"><img src="https://user-images.githubusercontent.com/8321756/233799411-6abf1d53-111a-48ea-9f2f-b99973ab8a3a.png" alt="Web Scraping" style="pointer-events: none;"></h3>
 
 ### Data Science Tools
-* JSON
+* MongoDB
 * Beautiful Soup
 * Selenium
 * Splinter
